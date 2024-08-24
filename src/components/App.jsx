@@ -10,27 +10,22 @@ function App() {
   const [bmi, setBmi] = useState();
   
 
-
-
   function CalculateBMI(event){
     event.preventDefault();
     const height = (feet*12)+ (inches *1);
 
-    if (typeof weight !== "number" || typeof height !== "number") {
-      alert('Please enter a valid weight and height');
-    } else { 
       const result = (weight / (height * height) * 703);
       const bmi  = Math.round(result*10)/10;
       
-      
       setBmi(bmi); 
-    }
+    
+    
   }
-
-
-  let reload = () => {
+  
+  function reload(){
     window.location.reload()
   }
+   
 
   return (
     <div className="app">
